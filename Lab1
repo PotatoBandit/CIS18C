@@ -10,14 +10,18 @@ public class Unique
 {
     public static void main(String args[] )
     { 
-        Unique u = new Unique();
-        u.getNumbers();}
-   // gets 5 unique numbers from the user
+        Unique application = new Unique(); 
+        application.getNumbers();
+    }
+
+   
    public void getNumbers()
    {
       Scanner input = new Scanner( System.in );
- 
-      int[] numbers = new int[5]; //array of five elements
+
+        /* Create an array of five elements*/ 
+      int[] numbers = new int[5] ;
+      
       int count = 0; // number of uniques read
       int entered = 0; // number of entered numbers
       
@@ -25,43 +29,54 @@ public class Unique
       {
          System.out.print( "Enter number: " );
          /* Write code here to retrieve the input from the user */
+         int number;
+         number = input.nextInt();
+         
+         // validate the input
+         /* Write an if statement that validates the input */  
+         if (number>=10 && number <=100)
+         {
+             
+         
+            // flags whether this number already exists
+            boolean containsNumber = false;
+
+            // increment number of entered numbers
+            entered++;
+            
+            /* Compare the user input to the unique numbers in the array using a for 
+               statement. If the number is unique, store new number */
+            for (int i = 0; i < numbers.length; i++)
+            {
+                if (number == numbers[i])
+                {
+                    containsNumber = true;
+                }
+            }
+            /* add the user input to the array only if the number is not already 
+               in the array */
+            if ( !containsNumber )
+            {
+                numbers[count] = number;
+                count++;
+               /* Write code to add the number to the array and increment 
+                  unique items input */
+            } // end if
+            else 
+               System.out.printf( "%d has already been entered\n",
+                  number );
+         } // end if
+         else
+            System.out.println( "number must be between 10 and 100" );
+         
+         // print the list of unique values
+         /* Write code to output the contents of the array */
          for (int i = 0; i < numbers.length; i++)
          {
-            numbers[i] = input.nextInt(); //retrieve user input
-            // validate the input
-            if (numbers[i] > 10 && numbers[i] < 100) //validates number change 
-            {
-               // flags whether this number already exists
-               boolean containsNumber = false;
-
-               // increment number of entered numbers
-               entered++;
-
-               /* Compare the user input to the unique numbers in the array using a for 
-                  statement. If the number is unique, store new number */
-               for (int j =0; j < numbers.length; j++)
-               {
-                   
-               }
-               /* add the user input to the array only if the number is not already 
-                  in the array */
-               if ( !containsNumber )
-               {
-                  /* Write code to add the number to the array and increment 
-                     unique items input */
-               } // end if
-               else 
-                  System.out.printf( "%d has already been entered\n",
-                     numbers );
-            } // end if
-            else
-               System.out.println( "number must be between 10 and 100" );
+             if (numbers[i] != 0)
+             System.out.print(numbers[i] + " ");
          }
-         // print the list of unique values
-         for (int i = 0; i < numbers.length ; i++)
-         {/* Write code to output the contents of the array */
-             System.out.println(numbers[i] + " ");
-         }
+         System.out.println();
       } // end while      
    } // end method getNumbers
 } // end class Unique
