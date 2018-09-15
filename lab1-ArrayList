@@ -1,0 +1,63 @@
+
+package unique;
+// Rebecca Carter
+// ID: 2648939
+// Lab 1: Unique.java
+// Reads in 5 unique numbers.
+import java.util.Scanner;
+import java.util.*;
+
+public class Unique
+{
+    public static void main(String args[] )
+    { 
+        Unique application = new Unique(); 
+        application.getNumbers();
+       
+    }
+
+   public void getNumbers()
+   {
+      Scanner input = new Scanner( System.in );
+      
+      ArrayList numbers;
+      numbers = new ArrayList();
+
+      int count = 0; 
+      int entered = 0; 
+      
+            while( entered < 5)
+            {
+               System.out.print( "Enter number: " );
+                       int number;
+                       number = input.nextInt();
+                        if (number>=10 && number <=100)
+                        {
+                                   boolean containsNumber = false;
+                                   entered++;
+                                   
+                                  for (int i = 0; i < 5; i++)
+                                  {
+                                             if (numbers.contains(number))
+                                             {
+                                                    containsNumber = true;
+                                             }
+                                  }
+
+                                   if ( !containsNumber )
+                                  {
+                                              numbers.add(number);
+                                              count++;
+                                  }
+                                    else 
+                                   {
+                                             System.out.printf( "%d has already been entered\n", number );
+                                   }
+                        } 
+                        else
+                                  System.out.println( "number must be between 10 and 100" );
+
+                       System.out.println(numbers);
+            }
+   }
+}
