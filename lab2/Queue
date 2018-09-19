@@ -1,0 +1,51 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package lab2;
+
+import java.util.LinkedList;
+/**
+ *
+ * @author ncc
+ */
+public class Queue 
+{
+        public static void main(String[] args) {
+        LinkedList<String> waitingQueue = new LinkedList<>();
+
+        waitingQueue.push("Jennifer");
+        waitingQueue.push("Angelina");
+        waitingQueue.push("Johnny");
+        waitingQueue.push("Rachel");
+
+        System.out.println("WaitingQueue : " + waitingQueue);
+
+        // Check is a Queue is empty
+        System.out.println("is waitingQueue empty? : " + waitingQueue.isEmpty());
+
+        // Find the size of the Queue
+        System.out.println("Size of waitingQueue : " + waitingQueue.size());
+
+        // Check if the Queue has an element
+        String name = "Johnny";
+        if(waitingQueue._____(name)) {
+            System.out.println("WaitingQueue has " + name);
+        } else {
+            System.out.println("Waiting Queue doesn't have " + name);
+        }
+
+        // Get the person at the front of the Queue without removing it
+        // The method throws NoSuchElementException if the Queue is empty
+        String firstPersonInTheWaitingQueue =  waitingQueue.element();
+        System.out.println("First Person in the Waiting Queue : " + firstPersonInTheWaitingQueue);
+
+        // Get the person at the front of the Queue without removing it using another method()
+        // This version returns null if the Queue is empty
+        firstPersonInTheWaitingQueue = waitingQueue.peek();
+        System.out.println("First Person in the Waiting Queue : " + firstPersonInTheWaitingQueue);
+
+    }
+    
+}
