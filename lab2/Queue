@@ -30,7 +30,7 @@ public class Queue
 
         // Check if the Queue has an element
         String name = "Johnny";
-        if(waitingQueue._____(name)) {
+        if(waitingQueue.contains(name)) {
             System.out.println("WaitingQueue has " + name);
         } else {
             System.out.println("Waiting Queue doesn't have " + name);
