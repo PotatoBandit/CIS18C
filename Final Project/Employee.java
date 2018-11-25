@@ -11,7 +11,18 @@ public class Employee
     private String Employee_Address;
     private Department Dept_Name;
     
-   void add_Employee(Integer id, String name, String bday, String ss, String salary, String address, Department dpt)
+    Employee(Integer id,  String name, String bday, String ss,  String salary,  String address) // pass dept
+    {
+        Employee_ID = id;
+        Employee_Name = name;
+        Employee_Bday = bday;
+        Employee_SS = ss;
+        Employee_Salary  = salary;
+         Employee_Address = address;
+        //Dept_Name = dpt;
+        
+    }
+   void add_Employee(Integer id, String name, String bday, String ss, String salary, String address)  //pass dept
    {
        setEmployee_ID(id);
        setEmployee_Name(name);
@@ -19,7 +30,7 @@ public class Employee
        setEmployee_SS(ss);
        setEmployee_Salary(salary);
        setEmployee_Address(address);
-       setDept_Name(dpt);
+       //setDept_Name(dpt);
        
        
    }
@@ -81,7 +92,5 @@ public class Employee
     }
    
 
-    
-    
     
 }
