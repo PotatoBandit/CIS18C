@@ -1,11 +1,4 @@
-/*
 
- */
-
-/**
- *
- * @author rebecca
- */
 import java.util.ArrayList;
 import java.util.*;
 
@@ -35,22 +28,25 @@ public class Company
          
     }
     
-    void print()
+    void printDepartmentList()
     {
         for (int i = 0; i < departments.size(); i++)
         {
-            System.out.println(departments.get(i));
+            System.out.println(departments.get(i).toString());
         }
-        
     }
     
+    
+    
+
     public static void main(String[] args)
     {
         Company c = new Company();
         c.populateCompany();
-        c.print();
-        System.out.println("Hello");
+        c.printDepartmentList();
+       
+        
     }
-    
+   
     
 }
