@@ -1,13 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
-/**
- *
- * @author rebecca
- */
 import java.util.HashMap;
 import java.util.*;
 
@@ -17,10 +8,11 @@ public class Department
     String description;
    HashMap<Integer, Employee>  map;
 
-   Department(int id, String Desciption)
+   Department(int id, String description)
    {
        this.id = id;
-       this.description = description;
+      this.description = description;
+      this.map = map;
    }
    
    void set_Department_ID(int id)
@@ -35,12 +27,18 @@ public class Department
    
      void set_Department_Description(String Description)
    {
-       this.description = description;
+       this.description = Description;
    }
    
    String  get_Department_Description()
    {
        return description;
+   }
+   
+   @Override
+   public String toString()
+   {
+       return ("ID: " + get_Department_ID() + "  " + get_Department_Description());
    }
    
    void search_For_Employee()
@@ -51,13 +49,24 @@ public class Department
         Scanner input = new Scanner(System.in);
        System.out.println("Enter Dept:: ");
        dept_id = input.nextInt();
-       
-       
  
        System.out.println("Enter Employee ID: ");
       emp_id = input.nextInt();
       Employee emp = map.get(emp_id);
        System.out.println(emp.getEmployee_Name());
    }
+   
+   void addEmployee(Integer id,  String name, String bday, String ss,  String salary,  String address)
+   {
+         Employee newEmp = new Employee(id, name, bday, ss, salary, address);
+         map.put(id, newEmp);
+   }
+   
+   void populateMap()
+   {
+       addEmployee(1, "Scott", "10/10/10" , "12-12-1232", "2123124", "132413 asdfadfadf " );
+   }
+   
+   
    
 }
