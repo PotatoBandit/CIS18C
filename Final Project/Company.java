@@ -33,19 +33,16 @@ public class Company
         for (int i = 0; i < departments.size(); i++)
         {
             System.out.println(departments.get(i).toString());
+            departments.get(i).printEmployeeList();
+            
         }
     }
-    
-    
-    
 
     public static void main(String[] args)
     {
         Company c = new Company();
         c.populateCompany();
         c.printDepartmentList();
-       
-        
     }
    
     
